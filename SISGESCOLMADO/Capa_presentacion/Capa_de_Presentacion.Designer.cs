@@ -1,4 +1,4 @@
-﻿namespace SISGESCOLMADO
+﻿namespace SISGESCOLMADO.Capa_presentacion
 {
     partial class Form1
     {
