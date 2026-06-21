@@ -1,10 +1,16 @@
 ﻿using System;
-using System.Data;
-using System.Data.SqlClient;
+using Microsoft.Data.SqlClient;   
 
 namespace SISGESCOLMADO.Capa_datos
 {
-    internal class Class1
+    public class Conexion
     {
+        private static string cadenaConexion =
+            @"Data Source=.\SQLEXPRESS;Initial Catalog=SISGESCOLMADO_BD;Integrated Security=True;TrustServerCertificate=True;";
+
+        public static SqlConnection ObtenerConexion()
+        {
+            return new SqlConnection(cadenaConexion);
+        }
     }
 }
