@@ -1,9 +1,8 @@
 ﻿using SISGESCOLMADO.Capa_datos;
-using SISGESCOLMADO.Capa_presentacion;
 using System;
 using System.Windows.Forms;
 
-namespace SISGESCOLMADO
+namespace SISGESCOLMADO.Capa_presentacion
 {
 
     internal static class Program
