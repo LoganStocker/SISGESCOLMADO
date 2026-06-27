@@ -2,7 +2,7 @@
 
 namespace SISGESCOLMADO.Capa_negocios
 {
-    public abstract class VentaFiado : Transaccion
+    public class VentaFiado : Transaccion
     {
         private int idCliente;
         private DateTime fechaVencimiento;

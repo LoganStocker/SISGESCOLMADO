@@ -1,6 +1,6 @@
 ﻿namespace SISGESCOLMADO.Capa_negocios
 {
-    public abstract class VentaContado : Transaccion
+    public class VentaContado : Transaccion
     {
         public VentaContado(int idProducto, int cantidad, decimal total)
             : base(idProducto, cantidad, total)
