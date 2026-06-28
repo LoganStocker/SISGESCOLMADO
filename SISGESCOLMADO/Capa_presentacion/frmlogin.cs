@@ -27,5 +27,10 @@ namespace SISGESCOLMADO.Capa_presentacion
                 MessageBox.Show("Usuario o contraseña incorrectos.", "Error de acceso");
             }
         }
+
+        private void btnIngresar_Click_1(object sender, EventArgs e)
+        {
+
+        }
     }
 }

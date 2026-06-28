@@ -54,10 +54,11 @@
             btnIngresar.Name = "btnIngresar";
             btnIngresar.Size = new Size(94, 29);
             btnIngresar.TabIndex = 2;
-            btnIngresar.Text = "button1";
+            btnIngresar.Text = "Aceptar";
             btnIngresar.UseVisualStyleBackColor = true;
+            btnIngresar.Click += btnIngresar_Click_1;
             // 
-            // frmlogin
+            // frmLogin
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -65,7 +66,7 @@
             Controls.Add(btnIngresar);
             Controls.Add(txtContrasena);
             Controls.Add(txtUsuario);
-            Name = "frmlogin";
+            Name = "frmLogin";
             Text = "frmlogin";
             ResumeLayout(false);
             PerformLayout();

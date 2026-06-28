@@ -28,12 +28,67 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Text = "frmPrincipal";
+            btnInventario = new Button();
+            btnVentas = new Button();
+            btnCreditos = new Button();
+            btnReportes = new Button();
+            SuspendLayout();
+            // 
+            // btnInventario
+            // 
+            btnInventario.Location = new Point(73, 79);
+            btnInventario.Name = "btnInventario";
+            btnInventario.Size = new Size(94, 29);
+            btnInventario.TabIndex = 0;
+            btnInventario.Text = "Inventario";
+            btnInventario.UseVisualStyleBackColor = true;
+            // 
+            // btnVentas
+            // 
+            btnVentas.Location = new Point(192, 79);
+            btnVentas.Name = "btnVentas";
+            btnVentas.Size = new Size(94, 29);
+            btnVentas.TabIndex = 1;
+            btnVentas.Text = "Ventas";
+            btnVentas.UseVisualStyleBackColor = true;
+            // 
+            // btnCreditos
+            // 
+            btnCreditos.Location = new Point(317, 79);
+            btnCreditos.Name = "btnCreditos";
+            btnCreditos.Size = new Size(94, 29);
+            btnCreditos.TabIndex = 2;
+            btnCreditos.Text = "Creditos";
+            btnCreditos.UseVisualStyleBackColor = true;
+            // 
+            // btnReportes
+            // 
+            btnReportes.Location = new Point(431, 79);
+            btnReportes.Name = "btnReportes";
+            btnReportes.Size = new Size(94, 29);
+            btnReportes.TabIndex = 3;
+            btnReportes.Text = "Reportes";
+            btnReportes.UseVisualStyleBackColor = true;
+            // 
+            // frmPrincipal
+            // 
+            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(800, 450);
+            Controls.Add(btnReportes);
+            Controls.Add(btnCreditos);
+            Controls.Add(btnVentas);
+            Controls.Add(btnInventario);
+            Name = "frmPrincipal";
+            Text = "frmPrincipal";
+            ResumeLayout(false);
         }
 
         #endregion
+
+        private Button btnInventario;
+        private Button btnVentas;
+        private Button btnCreditos;
+        private Button btnReportes;
     }
 }
