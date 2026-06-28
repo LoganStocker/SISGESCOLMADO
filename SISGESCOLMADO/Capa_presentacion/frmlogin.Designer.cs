@@ -56,7 +56,7 @@
             btnIngresar.TabIndex = 2;
             btnIngresar.Text = "Aceptar";
             btnIngresar.UseVisualStyleBackColor = true;
-            btnIngresar.Click += btnIngresar_Click_1;
+            btnIngresar.Click += btnIngresar_Click;
             // 
             // frmLogin
             // 

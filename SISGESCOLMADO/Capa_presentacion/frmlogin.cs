@@ -28,9 +28,5 @@ namespace SISGESCOLMADO.Capa_presentacion
             }
         }
 
-        private void btnIngresar_Click_1(object sender, EventArgs e)
-        {
-
-        }
     }
 }
