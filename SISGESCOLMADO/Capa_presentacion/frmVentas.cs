@@ -25,27 +25,27 @@ namespace SISGESCOLMADO.Capa_presentacion
 
                 if (tipoVenta == "Contado")
                 {
-                    // Clase hija concreta: VentaContado
+                    // Clase hija VentaContado
                     transaccion = new VentaContado(idProducto, cantidad, total);
                 }
                 else // Fiado
                 {
-                    // Constructor parametrizado completo de Cliente
+                    // Constructor completo 
                     Cliente cliente = new Cliente(txtNombreCliente.Text, true);
                     string resultadoCliente = cliente.GuardarCliente();
 
                     DateTime fechaVencimiento = dtpFechaVencimiento.Value;
 
-                    // Clase hija concreta: VentaFiado
+                    // Clase hija VentaFiado
                     transaccion = new VentaFiado(idProducto, cantidad, total, cliente.IdCliente, fechaVencimiento);
                     idClienteParaVenta = cliente.IdCliente;
                 }
 
-                // Polimorfismo: referencia de tipo base (Transaccion) invoca el método sobreescrito
+                // Polimorfismo referencia de tipo base Transaccion invoca metodo sobreescrito
                 string mensajePago = transaccion.ProcesarPago();
                 string mensajeFinal = transaccion.FinalizarTransaccion();
 
-                // Método normal de GestorVentas: registra la venta en la base de datos
+                // Metodo normal de GestorVentas
                 GestorVentas gestor = new GestorVentas();
                 string resultadoVenta = gestor.registrarVenta(idClienteParaVenta, idProducto, cantidad, total, tipoVenta);
 
