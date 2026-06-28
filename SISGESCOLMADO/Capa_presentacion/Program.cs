@@ -1,5 +1,4 @@
-﻿using SISGESCOLMADO.Capa_datos;
-using System;
+﻿using System;
 using System.Windows.Forms;
 
 namespace SISGESCOLMADO.Capa_presentacion
@@ -9,7 +8,7 @@ namespace SISGESCOLMADO.Capa_presentacion
     {
         [STAThread]
         static void Main()
-        {   
+        {
             ApplicationConfiguration.Initialize();
             Application.Run(new frmLogin());
         }

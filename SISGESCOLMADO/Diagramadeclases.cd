@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="SISGESCOLMADO.Capa_negocios.Cliente">
+    <Position X="1" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAAAABACBAAAAACAAAAAgAAAAAAAAAAEAAIABgAAAAI=</HashCode>
+      <FileName>Capa_negocios\Cliente.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SISGESCOLMADO.Capa_negocios.CorteCaja">
+    <Position X="5.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AJAAAAAAQAAAAAAAAAAAAAAQAAAAEAAAAQECAAABAAA=</HashCode>
+      <FileName>Capa_negocios\Cortecaja.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SISGESCOLMADO.Capa_negocios.GestorAlertas">
+    <Position X="3" Y="1" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAA=</HashCode>
+      <FileName>Capa_negocios\GestorAlertas.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SISGESCOLMADO.Capa_negocios.GestorInventario">
+    <Position X="7.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAAAgAAAAAAAAAABAAIAAAAAAAAAAAAA=</HashCode>
+      <FileName>Capa_negocios\GestorInventario.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SISGESCOLMADO.Capa_negocios.GestorVentas">
+    <Position X="7.75" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAEAAAABAAAAAAAAAAAAAAEAA=</HashCode>
+      <FileName>Capa_negocios\GestorVentas.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SISGESCOLMADO.Capa_negocios.Transaccion">
+    <Position X="5.25" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AYAAACEAAQAgAAEAgAAAAAAAAAAAQAAAAEAAAAAAAAA=</HashCode>
+      <FileName>Capa_negocios\Transaccion.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SISGESCOLMADO.Capa_negocios.VentaContado">
+    <Position X="7.75" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Capa_negocios\VentaContadocs.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SISGESCOLMADO.Capa_negocios.VentaFiado">
+    <Position X="3" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIAAAAAAAAAAAAAAgAIAAAACAAAAAAAEAAAABAAAAAA=</HashCode>
+      <FileName>Capa_negocios\VentaFiado.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Delegate Name="SISGESCOLMADO.Capa_negocios.FiltroCredito">
+    <Position X="3" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAA=</HashCode>
+      <FileName>Capa_negocios\GestorAlertas.cs</FileName>
+    </TypeIdentifier>
+  </Delegate>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
