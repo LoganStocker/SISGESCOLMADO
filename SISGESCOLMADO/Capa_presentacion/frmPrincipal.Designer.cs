@@ -42,6 +42,7 @@
             btnInventario.TabIndex = 0;
             btnInventario.Text = "Inventario";
             btnInventario.UseVisualStyleBackColor = true;
+            btnInventario.Click += new System.EventHandler(this.btnInventario_Click);
             // 
             // btnVentas
             // 
@@ -51,6 +52,8 @@
             btnVentas.TabIndex = 1;
             btnVentas.Text = "Ventas";
             btnVentas.UseVisualStyleBackColor = true;
+            btnVentas.Click += new System.EventHandler(this.btnVentas_Click);
+
             // 
             // btnCreditos
             // 
@@ -60,6 +63,7 @@
             btnCreditos.TabIndex = 2;
             btnCreditos.Text = "Creditos";
             btnCreditos.UseVisualStyleBackColor = true;
+            btnCreditos.Click += new System.EventHandler(this.btnCreditos_Click);
             // 
             // btnReportes
             // 
@@ -69,6 +73,7 @@
             btnReportes.TabIndex = 3;
             btnReportes.Text = "Reportes";
             btnReportes.UseVisualStyleBackColor = true;
+            btnReportes.Click += new System.EventHandler(this.btnReportes_Click);
             // 
             // frmPrincipal
             // 
