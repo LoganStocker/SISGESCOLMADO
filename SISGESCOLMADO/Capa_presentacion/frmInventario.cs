@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Windows.Forms;
-using SISGESCOLMADO.Capa_datos;
+using SISGESCOLMADO.Capa_negocios;
 
 namespace SISGESCOLMADO.Capa_presentacion
 {
@@ -16,14 +16,14 @@ namespace SISGESCOLMADO.Capa_presentacion
             CargarProductos();
         }
 
-        // Cargar todos los productos en el DataGridView
+        // Cargar productos en DataGridView
         private void CargarProductos()
         {
-            ProductoDT productoDT = new ProductoDT();
-            dvgProductos.DataSource = productoDT.ConsultarTodos();
+            GestorInventario gestor = new GestorInventario();
+            dvgProductos.DataSource = gestor.ConsultarProductos();
         }
 
-        // Botón Agregar
+        // Boton Agregar
         private void btnAgregar_Click(object sender, EventArgs e)
         {
             try
@@ -33,10 +33,10 @@ namespace SISGESCOLMADO.Capa_presentacion
                 int stock = int.Parse(txtStock.Text);
                 string categoria = txtCategoria.Text;
 
-                ProductoDT productoDT = new ProductoDT();
-                productoDT.Insertar(nombre, precio, stock, categoria);
+                GestorInventario gestor = new GestorInventario();
+                string resultado = gestor.InsertarProducto(nombre, precio, stock, categoria);
 
-                MessageBox.Show("Producto agregado correctamente.");
+                MessageBox.Show(resultado);
                 CargarProductos();
             }
             catch (Exception ex)
@@ -45,7 +45,7 @@ namespace SISGESCOLMADO.Capa_presentacion
             }
         }
 
-        // Botón Actualizar
+        // Boton Actualizar
         private void btnActualizar_Click(object sender, EventArgs e)
         {
             try
@@ -56,10 +56,10 @@ namespace SISGESCOLMADO.Capa_presentacion
                 int stock = int.Parse(txtStock.Text);
                 string categoria = txtCategoria.Text;
 
-                ProductoDT productoDT = new ProductoDT();
-                productoDT.Actualizar(idProducto, nombre, precio, stock, categoria);
+                GestorInventario gestor = new GestorInventario();
+                string resultado = gestor.ActualizarProducto(idProducto, nombre, precio, stock, categoria);
 
-                MessageBox.Show("Producto actualizado correctamente.");
+                MessageBox.Show(resultado);
                 CargarProductos();
             }
             catch (Exception ex)
@@ -68,17 +68,17 @@ namespace SISGESCOLMADO.Capa_presentacion
             }
         }
 
-        // Botón Eliminar
+        // Boton Eliminar
         private void btnEliminar_Click(object sender, EventArgs e)
         {
             try
             {
                 int idProducto = int.Parse(txtIdProducto.Text);
 
-                ProductoDT productoDT = new ProductoDT();
-                productoDT.Eliminar(idProducto);
+                GestorInventario gestor = new GestorInventario();
+                string resultado = gestor.EliminarProducto(idProducto);
 
-                MessageBox.Show("Producto eliminado correctamente.");
+                MessageBox.Show(resultado);
                 CargarProductos();
             }
             catch (Exception ex)
@@ -87,7 +87,7 @@ namespace SISGESCOLMADO.Capa_presentacion
             }
         }
 
-        // Click en una fila del DataGridView, para cargar los datos en los TextBox
+        // DataGridView para cargar los datos en los TextBox
         private void dvgProductos_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex >= 0)
