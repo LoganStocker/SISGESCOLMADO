@@ -5,7 +5,7 @@ namespace SISGESCOLMADO.Capa_negocios
 {
     public class GestorVentas
     {
-        // Método normal: registrarVenta()
+        // Metodo normal registrarVenta
         public string registrarVenta(int? idCliente, int idProducto, int cantidad, decimal total, string tipoVenta)
         {
             try
@@ -20,7 +20,7 @@ namespace SISGESCOLMADO.Capa_negocios
             }
         }
 
-        // Método normal: abonarDeuda()
+        // Metodo normal abonarDeuda
         public string abonarDeuda(int idCredito, decimal montoAbonado, decimal montoPendienteActual)
         {
             try
@@ -41,7 +41,7 @@ namespace SISGESCOLMADO.Capa_negocios
             }
         }
 
-        // Método normal: actualizarInventario()
+        // Metodo normal actualizarInventario
         public string actualizarInventario(int idProducto, int nuevoStock)
         {
             try
