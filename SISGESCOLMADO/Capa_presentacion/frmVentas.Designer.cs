@@ -56,6 +56,7 @@
             txtTotal.Name = "txtTotal";
             txtTotal.Size = new Size(125, 27);
             txtTotal.TabIndex = 1;
+            txtTotal.ReadOnly = true;
             // 
             // txtCantidad
             // 
@@ -63,6 +64,7 @@
             txtCantidad.Name = "txtCantidad";
             txtCantidad.Size = new Size(125, 27);
             txtCantidad.TabIndex = 2;
+            txtCantidad.TextChanged += new System.EventHandler(this.txtCantidad_TextChanged);
             // 
             // txtIdProducto
             // 
@@ -70,6 +72,7 @@
             txtIdProducto.Name = "txtIdProducto";
             txtIdProducto.Size = new Size(125, 27);
             txtIdProducto.TabIndex = 3;
+            txtIdProducto.TextChanged += new System.EventHandler(this.txtIdProducto_TextChanged);
             // 
             // cboTipoVenta
             // 

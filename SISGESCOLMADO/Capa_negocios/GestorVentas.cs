@@ -1,5 +1,6 @@
-﻿using System;
-using SISGESCOLMADO.Capa_datos;
+﻿using SISGESCOLMADO.Capa_datos;
+using System;
+using System.Data;
 
 namespace SISGESCOLMADO.Capa_negocios
 {

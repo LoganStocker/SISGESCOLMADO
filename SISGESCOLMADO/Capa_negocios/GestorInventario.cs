@@ -57,5 +57,19 @@ namespace SISGESCOLMADO.Capa_negocios
                 return ex.Message;
             }
         }
+        public decimal ObtenerPrecioProducto(int idProducto)
+        {
+            ProductoDT productoDT = new ProductoDT();
+            DataTable dt = productoDT.ConsultarTodos();
+
+            foreach (DataRow fila in dt.Rows)
+            {
+                if (Convert.ToInt32(fila["IdProducto"]) == idProducto)
+                {
+                    return Convert.ToDecimal(fila["Precio"]);
+                }
+            }
+            return 0;
+        }
     }
 }
