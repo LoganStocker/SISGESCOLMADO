@@ -55,10 +55,11 @@
             // 
             // txtIdCredito
             // 
-            txtIdCredito.Location = new Point(12, 55);
+            txtIdCredito.Location = new Point(48, 55);
             txtIdCredito.Name = "txtIdCredito";
             txtIdCredito.Size = new Size(125, 27);
             txtIdCredito.TabIndex = 2;
+            txtIdCredito.ReadOnly = true;
             // 
             // txtMontoPendiente
             // 
@@ -66,6 +67,7 @@
             txtMontoPendiente.Name = "txtMontoPendiente";
             txtMontoPendiente.Size = new Size(125, 27);
             txtMontoPendiente.TabIndex = 3;
+            txtMontoPendiente.ReadOnly = true;
             // 
             // btnAbonar
             // 

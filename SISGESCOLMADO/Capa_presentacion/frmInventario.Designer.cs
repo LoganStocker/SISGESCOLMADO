@@ -67,6 +67,7 @@
             txtIdProducto.Name = "txtIdProducto";
             txtIdProducto.Size = new Size(125, 27);
             txtIdProducto.TabIndex = 3;
+            txtIdProducto.ReadOnly = true;
             // 
             // txtPrecio
             // 
