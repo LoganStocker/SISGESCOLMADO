@@ -1,4 +1,5 @@
 ﻿using System;
+using SISGESCOLMADO.Capa_datos;
 
 namespace SISGESCOLMADO.Capa_negocios
 {
@@ -6,34 +7,56 @@ namespace SISGESCOLMADO.Capa_negocios
     {
         private int idCliente;
         private string nombre;
+        private string telefono;
         private bool tieneCredito;
         private decimal limiteCredito;
 
-        // Constructor parametrizado completo
+        // Constructor completo
         public Cliente(string nombre, bool tieneCredito)
         {
             this.nombre = nombre;
             this.tieneCredito = tieneCredito;
-            this.limiteCredito = tieneCredito ? 1000.00m : 0; // límite por si tiene crédito
+            this.limiteCredito = tieneCredito ? 1000.00m : 0; // limite si tiene credito
         }
 
-        // Constructor con nombre solo
+        // Constructor con nombre
         public Cliente(string nombre)
         {
             this.nombre = nombre;
-            this.tieneCredito = false; // sin crédito 
+            this.tieneCredito = false; // sin crédito por defecto
             this.limiteCredito = 0;
         }
 
-        // Propiedades para acceder a los atributos 
+        // Propiedades 
         public int IdCliente
         {
             get { return idCliente; }
             set { idCliente = value; }
         }
 
+        public string Telefono
+        {
+            get { return telefono; }
+            set { telefono = value; }
+        }
+
         public string Nombre => nombre;
         public bool TieneCredito => tieneCredito;
         public decimal LimiteCredito => limiteCredito;
+
+        // METODO NORMAL toma los datos de este objeto y los envia a la Capa Datos
+        public string GuardarCliente()
+        {
+            try
+            {
+                ClienteDT dt = new ClienteDT();
+                this.idCliente = dt.Insertar(this.nombre, this.telefono, this.tieneCredito, this.limiteCredito);
+                return "Cliente guardado correctamente.";
+            }
+            catch (Exception ex)
+            {
+                return "Error al guardar cliente: " + ex.Message;
+            }
+        }
     }
 }
