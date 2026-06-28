@@ -13,9 +13,11 @@ namespace SISGESCOLMADO.Capa_presentacion
 
         private void frmReportes_Load(object sender, EventArgs e)
         {
+            // Carga ventas abrir el formulario
             CargarVentas();
         }
 
+        // Consulta y muestra ventas DataGridView
         private void CargarVentas()
         {
             GestorVentas gestor = new GestorVentas();
@@ -26,9 +28,13 @@ namespace SISGESCOLMADO.Capa_presentacion
         {
             try
             {
+                // Genera el corte de caja 
                 CorteCaja corte = CorteCaja.GenerarDesdeVentas();
+
+                // Muestra el resumen 
                 MessageBox.Show(corte.GenerarResumen(), "Corte de Caja del Día");
 
+                // Fuerza el destructor ~CorteCaja
                 corte = null;
                 GC.Collect();
                 GC.WaitForPendingFinalizers();

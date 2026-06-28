@@ -57,16 +57,19 @@ namespace SISGESCOLMADO.Capa_presentacion
                 MessageBox.Show("Error: " + ex.Message);
             }
         }
+        // Recalcula el total cuando cambia la cantidad
         private void txtCantidad_TextChanged(object sender, EventArgs e)
         {
             CalcularTotal();
         }
 
+        // Recalcula el total cuando cambia el producto
         private void txtIdProducto_TextChanged(object sender, EventArgs e)
         {
             CalcularTotal();
         }
 
+        // Muestra u oculta campos según el tipo de venta seleccionado
         private void cboTipoVenta_SelectedIndexChanged(object sender, EventArgs e)
         {
             bool esFiado = cboTipoVenta.SelectedItem != null && cboTipoVenta.SelectedItem.ToString() == "Fiado";
@@ -74,6 +77,7 @@ namespace SISGESCOLMADO.Capa_presentacion
             dtpFechaVencimiento.Visible = esFiado;
         }
 
+        // Calcula el total multiplicando precio del producto por cantidad
         private void CalcularTotal()
         {
             try
@@ -83,14 +87,13 @@ namespace SISGESCOLMADO.Capa_presentacion
                     int idProducto = int.Parse(txtIdProducto.Text);
                     int cantidad = int.Parse(txtCantidad.Text);
 
+                    // Obtiene el precio desde Capa Negocios
                     GestorInventario gestor = new GestorInventario();
                     decimal precio = gestor.ObtenerPrecioProducto(idProducto);
                     txtTotal.Text = (precio * cantidad).ToString();
                 }
             }
             catch { }
-
-
         }
     }
 }
