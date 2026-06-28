@@ -6,15 +6,18 @@ namespace SISGESCOLMADO.Capa_datos
 {
     public class ClienteDT
     {
-        // Para insertar
-        public void Insertar(string nombre, string telefono, bool tieneCredito, decimal limiteCredito)
+        // Insertar cliente y devolver el IdCliente generado
+        public int Insertar(string nombre, string telefono, bool tieneCredito, decimal limiteCredito)
         {
+            int idGenerado = 0;
+
             try
             {
                 using (SqlConnection con = Conexion.ObtenerConexion())
                 {
                     string query = @"INSERT INTO Clientes (Nombre, Telefono, TieneCredito, LimiteCredito) 
-                                      VALUES (@Nombre, @Telefono, @TieneCredito, @LimiteCredito)";
+                                      VALUES (@Nombre, @Telefono, @TieneCredito, @LimiteCredito);
+                                      SELECT CAST(SCOPE_IDENTITY() AS INT);";
 
                     SqlCommand cmd = new SqlCommand(query, con);
                     cmd.Parameters.AddWithValue("@Nombre", nombre);
@@ -23,16 +26,18 @@ namespace SISGESCOLMADO.Capa_datos
                     cmd.Parameters.AddWithValue("@LimiteCredito", limiteCredito);
 
                     con.Open();
-                    cmd.ExecuteNonQuery();
+                    idGenerado = (int)cmd.ExecuteScalar();
                 }
             }
             catch (Exception ex)
             {
                 throw new Exception("Error al insertar cliente: " + ex.Message);
             }
+
+            return idGenerado;
         }
 
-        // Para poder consultar
+        // Consultar clientes
         public DataTable ConsultarTodos()
         {
             DataTable tabla = new DataTable();
@@ -54,7 +59,7 @@ namespace SISGESCOLMADO.Capa_datos
             return tabla;
         }
 
-        // para buscar el cliente por el nombre
+        // Buscar cliente nombre
         public DataTable BuscarPorNombre(string nombre)
         {
             DataTable tabla = new DataTable();
@@ -79,7 +84,7 @@ namespace SISGESCOLMADO.Capa_datos
             return tabla;
         }
 
-        // PARA CAMBIAR DATOS EN EL CLIENTE OSEA ACTUALIZAR
+        // Actualizar cliente
         public void Actualizar(int idCliente, string nombre, string telefono, bool tieneCredito, decimal limiteCredito)
         {
             try
@@ -108,7 +113,7 @@ namespace SISGESCOLMADO.Capa_datos
             }
         }
 
-        // Para eliminar el cliente 
+        // Eliminar cliente
         public void Eliminar(int idCliente)
         {
             try
