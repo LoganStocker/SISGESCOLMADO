@@ -1,4 +1,6 @@
-﻿using System;
+﻿using SISGESCOLMADO.Capa_datos;
+using System;
+using System.Data;
 
 namespace SISGESCOLMADO.Capa_negocios
 {
@@ -31,6 +33,26 @@ namespace SISGESCOLMADO.Capa_negocios
         public decimal TotalVentasFiado => totalVentasFiado;
         public decimal TotalGeneral => totalVentasContado + totalVentasFiado;
         public int CantidadTransacciones => cantidadTransacciones;
+
+        public static CorteCaja GenerarDesdeVentas()
+        {
+            VentaDT ventaDT = new VentaDT();
+            DataTable tabla = ventaDT.ConsultarTodas();
+
+            decimal totalContado = 0;
+            decimal totalFiado = 0;
+            int cantidad = tabla.Rows.Count;
+
+            foreach (DataRow fila in tabla.Rows)
+            {
+                if (fila["TipoVenta"].ToString() == "Contado")
+                    totalContado += Convert.ToDecimal(fila["Total"]);
+                else
+                    totalFiado += Convert.ToDecimal(fila["Total"]);
+            }
+
+            return new CorteCaja(totalContado, totalFiado, cantidad);
+        }
 
         //Genera el resumen
         public string GenerarResumen()

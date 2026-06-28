@@ -56,5 +56,23 @@ namespace SISGESCOLMADO.Capa_negocios
                 return ex.Message;
             }
         }
+
+        public DataTable ConsultarVentas()
+        {
+            VentaDT ventaDT = new VentaDT();
+            return ventaDT.ConsultarTodas();
+        }
+
+        public void ActualizarEstadosVencidos()
+        {
+            CreditoDT creditoDT = new CreditoDT();
+            creditoDT.ActualizarEstadosVencidos();
+        }
+
+        public DataTable ConsultarCreditos()
+        {
+            CreditoDT creditoDT = new CreditoDT();
+            return creditoDT.ConsultarTodos();
+        }
     }
 }

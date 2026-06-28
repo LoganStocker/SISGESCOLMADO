@@ -1,7 +1,5 @@
 ﻿using System;
-using System.Data;
 using System.Windows.Forms;
-using SISGESCOLMADO.Capa_datos;
 using SISGESCOLMADO.Capa_negocios;
 
 namespace SISGESCOLMADO.Capa_presentacion
@@ -20,37 +18,17 @@ namespace SISGESCOLMADO.Capa_presentacion
 
         private void CargarVentas()
         {
-            VentaDT ventaDT = new VentaDT();
-            dgvVentas.DataSource = ventaDT.ConsultarTodas();
+            GestorVentas gestor = new GestorVentas();
+            dgvVentas.DataSource = gestor.ConsultarVentas();
         }
 
         private void btnGenerarCorte_Click(object sender, EventArgs e)
         {
             try
             {
-                VentaDT ventaDT = new VentaDT();
-                DataTable tabla = ventaDT.ConsultarTodas();
+                CorteCaja corte = CorteCaja.GenerarDesdeVentas();
+                MessageBox.Show(corte.GenerarResumen(), "Corte de Caja del Día");
 
-                decimal totalContado = 0;
-                decimal totalFiado = 0;
-                int cantidadTransacciones = tabla.Rows.Count;
-
-                foreach (DataRow fila in tabla.Rows)
-                {
-                    if (fila["TipoVenta"].ToString() == "Contado")
-                        totalContado += Convert.ToDecimal(fila["Total"]);
-                    else
-                        totalFiado += Convert.ToDecimal(fila["Total"]);
-                }
-
-                //constructor completoCorteCaja
-                CorteCaja corte = new CorteCaja(totalContado, totalFiado, cantidadTransacciones);
-
-                // Mostrar el resumen 
-                string resumen = corte.GenerarResumen();
-                MessageBox.Show(resumen, "Corte de Caja del Día");
-
-                // Forzar el destructor para que realice
                 corte = null;
                 GC.Collect();
                 GC.WaitForPendingFinalizers();

@@ -63,6 +63,7 @@
             txtIdCredito.ReadOnly = true;
             txtIdCredito.Size = new Size(125, 27);
             txtIdCredito.TabIndex = 2;
+            txtIdCredito.ReadOnly = true;
             // 
             // txtMontoPendiente
             // 
@@ -71,6 +72,7 @@
             txtMontoPendiente.ReadOnly = true;
             txtMontoPendiente.Size = new Size(125, 27);
             txtMontoPendiente.TabIndex = 3;
+            txtMontoPendiente.ReadOnly = true;
             // 
             // btnAbonar
             // 
