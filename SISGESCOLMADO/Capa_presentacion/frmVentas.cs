@@ -85,7 +85,8 @@ namespace SISGESCOLMADO.Capa_presentacion
 
                 // Metodo normal de GestorVentas
                 GestorVentas gestor = new GestorVentas();
-                string resultadoVenta = gestor.registrarVenta(idClienteParaVenta, idProducto, cantidad, total, tipoVenta);
+                DateTime? fechaParaCredito = (tipoVenta == "Fiado") ? dtpFechaVencimiento.Value : (DateTime?)null;
+                string resultadoVenta = gestor.registrarVenta(idClienteParaVenta, idProducto, cantidad, total, tipoVenta, fechaParaCredito);
 
                 int nuevoStock = stockActual - cantidad;
 

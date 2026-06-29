@@ -7,12 +7,20 @@ namespace SISGESCOLMADO.Capa_negocios
     public class GestorVentas
     {
         // Metodo normal registrarVenta
-        public string registrarVenta(int? idCliente, int idProducto, int cantidad, decimal total, string tipoVenta)
+        public string registrarVenta(int? idCliente, int idProducto, int cantidad, decimal total, string tipoVenta, DateTime? fechaVencimiento = null)
         {
             try
             {
                 VentaDT ventaDT = new VentaDT();
                 int idVenta = ventaDT.Insertar(idCliente, idProducto, cantidad, total, tipoVenta);
+
+                // Si es Fiado, también se crea el crédito asociado
+                if (tipoVenta == "Fiado" && idCliente.HasValue && fechaVencimiento.HasValue)
+                {
+                    CreditoDT creditoDT = new CreditoDT();
+                    creditoDT.Insertar(idVenta, idCliente.Value, total, fechaVencimiento.Value);
+                }
+
                 return "Venta registrada correctamente. Id: " + idVenta;
             }
             catch (Exception ex)
