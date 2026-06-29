@@ -14,7 +14,7 @@ namespace SISGESCOLMADO.Capa_negocios
                 VentaDT ventaDT = new VentaDT();
                 int idVenta = ventaDT.Insertar(idCliente, idProducto, cantidad, total, tipoVenta);
 
-                // Si es Fiado, también se crea el crédito asociado
+                // Si es Fiado tambien se crea el creditoid
                 if (tipoVenta == "Fiado" && idCliente.HasValue && fechaVencimiento.HasValue)
                 {
                     CreditoDT creditoDT = new CreditoDT();
