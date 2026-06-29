@@ -50,7 +50,7 @@ namespace SISGESCOLMADO.Capa_negocios
             try
             {
                 ClienteDT dt = new ClienteDT();
-                this.idCliente = dt.Insertar(this.nombre, this.telefono, this.tieneCredito, this.limiteCredito);
+                this.idCliente = dt.Insertar(this.nombre, this.telefono ?? "" , this.tieneCredito, this.limiteCredito);
                 return "Cliente guardado correctamente.";
             }
             catch (Exception ex)

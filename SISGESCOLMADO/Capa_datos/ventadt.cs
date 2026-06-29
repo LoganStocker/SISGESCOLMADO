@@ -9,7 +9,7 @@ namespace SISGESCOLMADO.Capa_datos
         // Crear una venta y devolver el IdVenta generado
         public int Insertar(int? idCliente, int idProducto, int cantidad, decimal total, string tipoVenta)
         {
-            int idVentaGenerado = 0;
+            int idVentaGenerado;
 
             try
             {

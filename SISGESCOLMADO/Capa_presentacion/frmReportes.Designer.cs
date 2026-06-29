@@ -50,6 +50,7 @@
             btnGenerarCorte.TabIndex = 1;
             btnGenerarCorte.Text = "GenerarCorte";
             btnGenerarCorte.UseVisualStyleBackColor = true;
+            btnGenerarCorte.Click += new System.EventHandler(this.btnGenerarCorte_Click);
             // 
             // frmReportes
             // 
@@ -60,6 +61,7 @@
             Controls.Add(dgvVentas);
             Name = "frmReportes";
             Text = "frmReportes";
+            this.Load += new System.EventHandler(this.frmReportes_Load);
             ((System.ComponentModel.ISupportInitialize)dgvVentas).EndInit();
             ResumeLayout(false);
         }

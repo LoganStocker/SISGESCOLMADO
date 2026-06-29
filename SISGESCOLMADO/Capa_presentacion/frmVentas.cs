@@ -34,6 +34,11 @@ namespace SISGESCOLMADO.Capa_presentacion
                     // Constructor completo 
                     Cliente cliente = new Cliente(txtNombreCliente.Text, true);
                     string resultadoCliente = cliente.GuardarCliente();
+                    if (cliente.IdCliente == 0)
+                    {
+                        MessageBox.Show("No se pudo guardar el cliente: " + resultadoCliente);
+                        return;
+                    }
 
                     DateTime fechaVencimiento = dtpFechaVencimiento.Value;
 
@@ -94,6 +99,23 @@ namespace SISGESCOLMADO.Capa_presentacion
                 }
             }
             catch { }
+        }
+
+        private void frmVentas_Load(object sender, EventArgs e)
+        {
+            // Carga productos en el DataGridView 
+            GestorInventario gestor = new GestorInventario();
+            dvgProductos.DataSource = gestor.ConsultarProductos();
+        }
+
+        private void dvgProductos_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                // Al hacer click llena el ID automaticamente
+                DataGridViewRow fila = dvgProductos.Rows[e.RowIndex];
+                txtIdProducto.Text = fila.Cells["IdProducto"].Value.ToString();
+            }
         }
     }
 }

@@ -89,6 +89,7 @@
             btnAgregar.TabIndex = 5;
             btnAgregar.Text = "Agregar";
             btnAgregar.UseVisualStyleBackColor = true;
+            btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
             // 
             // btnActualizar
             // 
@@ -98,6 +99,7 @@
             btnActualizar.TabIndex = 6;
             btnActualizar.Text = "Actualizar";
             btnActualizar.UseVisualStyleBackColor = true;
+            btnActualizar.Click += new System.EventHandler(this.btnActualizar_Click);
             // 
             // btnEliminar
             // 
@@ -107,6 +109,7 @@
             btnEliminar.TabIndex = 7;
             btnEliminar.Text = "Eliminar";
             btnEliminar.UseVisualStyleBackColor = true;
+            btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
             // dvgProductos
             // 
@@ -117,6 +120,7 @@
             dvgProductos.RowHeadersWidth = 51;
             dvgProductos.Size = new Size(747, 188);
             dvgProductos.TabIndex = 8;
+            dvgProductos.CellClick += new DataGridViewCellEventHandler(this.dvgProductos_CellClick);
             // 
             // label1
             // 
@@ -184,6 +188,7 @@
             Controls.Add(txtCategoria);
             Name = "frmInventario";
             Text = "frmInventario";
+            this.Load += new System.EventHandler(this.frmInventario_Load);
             ((System.ComponentModel.ISupportInitialize)dvgProductos).EndInit();
             ResumeLayout(false);
             PerformLayout();
