@@ -9,7 +9,7 @@ namespace SISGESCOLMADO.Capa_datos
         // Crear una venta y devolver el IdVenta generado
         public int Insertar(int? idCliente, int idProducto, int cantidad, decimal total, string tipoVenta)
         {
-            int idVentaGenerado;
+            int idVentaGenerado = 0;
 
             try
             {
@@ -43,7 +43,7 @@ namespace SISGESCOLMADO.Capa_datos
             return idVentaGenerado;
         }
 
-        // buscar las ventas con nombre de cliente y producto 
+        // Consultar todas las ventas con nombre de cliente y producto
         public DataTable ConsultarTodas()
         {
             DataTable tabla = new DataTable();
@@ -73,7 +73,7 @@ namespace SISGESCOLMADO.Capa_datos
             return tabla;
         }
 
-        // buscar ventas de un cliente 
+        // Consultar ventas de un cliente específico
         public DataTable ConsultarPorCliente(int idCliente)
         {
             DataTable tabla = new DataTable();
@@ -104,7 +104,7 @@ namespace SISGESCOLMADO.Capa_datos
             return tabla;
         }
 
-        // Borrar venta 
+        // Eliminar venta
         public void Eliminar(int idVenta)
         {
             try

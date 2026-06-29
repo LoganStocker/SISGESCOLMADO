@@ -21,6 +21,38 @@ namespace SISGESCOLMADO.Capa_presentacion
                 decimal total = decimal.Parse(txtTotal.Text);
                 string tipoVenta = cboTipoVenta.SelectedItem.ToString();
 
+                // Validar stock disponible ANTES de registrar la venta
+                int stockActual = 0;
+                bool productoEncontrado = false;
+
+                foreach (DataGridViewRow fila in dvgProductos.Rows)
+                {
+                    if (Convert.ToInt32(fila.Cells["IdProducto"].Value) == idProducto)
+                    {
+                        stockActual = Convert.ToInt32(fila.Cells["Stock"].Value);
+                        productoEncontrado = true;
+                        break;
+                    }
+                }
+
+                if (!productoEncontrado)
+                {
+                    MessageBox.Show("Selecciona un producto válido de la lista.", "Producto no encontrado");
+                    return;
+                }
+
+                if (stockActual <= 0)
+                {
+                    MessageBox.Show("No hay stock disponible para este producto.", "Stock agotado");
+                    return;
+                }
+
+                if (cantidad > stockActual)
+                {
+                    MessageBox.Show($"Solo hay {stockActual} unidad(es) disponible(s) de este producto.", "Stock insuficiente");
+                    return;
+                }
+
                 Transaccion transaccion;
                 int? idClienteParaVenta = null;
 
@@ -54,6 +86,14 @@ namespace SISGESCOLMADO.Capa_presentacion
                 // Metodo normal de GestorVentas
                 GestorVentas gestor = new GestorVentas();
                 string resultadoVenta = gestor.registrarVenta(idClienteParaVenta, idProducto, cantidad, total, tipoVenta);
+
+                int nuevoStock = stockActual - cantidad;
+
+                GestorVentas gestorStock = new GestorVentas();
+                string resultadoStock = gestorStock.actualizarInventario(idProducto, nuevoStock);
+
+                GestorInventario gestorRecarga = new GestorInventario();
+                dvgProductos.DataSource = gestorRecarga.ConsultarProductos();
 
                 MessageBox.Show(mensajePago + "\n" + mensajeFinal + "\n" + resultadoVenta, "Resultado de la Venta");
             }
@@ -117,5 +157,11 @@ namespace SISGESCOLMADO.Capa_presentacion
                 txtIdProducto.Text = fila.Cells["IdProducto"].Value.ToString();
             }
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+        }
+
     }
 }

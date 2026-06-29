@@ -71,5 +71,18 @@ namespace SISGESCOLMADO.Capa_negocios
             }
             return 0;
         }
+        public string ActualizarStock(int idProducto, int nuevoStock)
+        {
+            try
+            {
+                ProductoDT productoDT = new ProductoDT();
+                productoDT.ActualizarStock(idProducto, nuevoStock);
+                return "Stock actualizado.";
+            }
+            catch (Exception ex)
+            {
+                return ex.Message;
+            }
+        }
     }
 }
