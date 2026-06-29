@@ -35,6 +35,7 @@
             dgvCreditos.Size = new Size(745, 188);
             dgvCreditos.TabIndex = 0;
             dgvCreditos.CellClick += new DataGridViewCellEventHandler(this.dgvCreditos_CellClick);
+            dgvCreditos.ReadOnly = true;
 
             // txtMontoAbonado
             txtMontoAbonado.Location = new Point(435, 55);

@@ -41,6 +41,7 @@
             dgvVentas.RowHeadersWidth = 51;
             dgvVentas.Size = new Size(727, 284);
             dgvVentas.TabIndex = 0;
+            dgvVentas.ReadOnly = true;
             // 
             // btnGenerarCorte
             // 

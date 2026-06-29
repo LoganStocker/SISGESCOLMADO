@@ -121,6 +121,7 @@
             dvgProductos.Size = new Size(747, 188);
             dvgProductos.TabIndex = 8;
             dvgProductos.CellClick += new DataGridViewCellEventHandler(this.dvgProductos_CellClick);
+            dvgProductos.ReadOnly = true;
             // 
             // label1
             // 

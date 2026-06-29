@@ -102,6 +102,7 @@
             dvgProductos.Size = new Size(747, 120);
             dvgProductos.TabIndex = 7;
             dvgProductos.CellClick += dvgProductos_CellClick;
+            dvgProductos.ReadOnly = true;
             // 
             // label1
             // 
