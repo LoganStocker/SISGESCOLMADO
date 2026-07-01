@@ -83,33 +83,36 @@
             // 
             // btnAgregar
             // 
+            btnAgregar.BackColor = SystemColors.AppWorkspace;
             btnAgregar.Location = new Point(16, 178);
             btnAgregar.Name = "btnAgregar";
             btnAgregar.Size = new Size(94, 29);
             btnAgregar.TabIndex = 5;
             btnAgregar.Text = "Agregar";
-            btnAgregar.UseVisualStyleBackColor = true;
-            btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
+            btnAgregar.UseVisualStyleBackColor = false;
+            btnAgregar.Click += btnAgregar_Click;
             // 
             // btnActualizar
             // 
+            btnActualizar.BackColor = SystemColors.AppWorkspace;
             btnActualizar.Location = new Point(130, 178);
             btnActualizar.Name = "btnActualizar";
             btnActualizar.Size = new Size(94, 29);
             btnActualizar.TabIndex = 6;
             btnActualizar.Text = "Actualizar";
-            btnActualizar.UseVisualStyleBackColor = true;
-            btnActualizar.Click += new System.EventHandler(this.btnActualizar_Click);
+            btnActualizar.UseVisualStyleBackColor = false;
+            btnActualizar.Click += btnActualizar_Click;
             // 
             // btnEliminar
             // 
+            btnEliminar.BackColor = SystemColors.AppWorkspace;
             btnEliminar.Location = new Point(248, 178);
             btnEliminar.Name = "btnEliminar";
             btnEliminar.Size = new Size(94, 29);
             btnEliminar.TabIndex = 7;
             btnEliminar.Text = "Eliminar";
-            btnEliminar.UseVisualStyleBackColor = true;
-            btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
+            btnEliminar.UseVisualStyleBackColor = false;
+            btnEliminar.Click += btnEliminar_Click;
             // 
             // dvgProductos
             // 
@@ -117,11 +120,11 @@
             dvgProductos.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dvgProductos.Location = new Point(16, 239);
             dvgProductos.Name = "dvgProductos";
+            dvgProductos.ReadOnly = true;
             dvgProductos.RowHeadersWidth = 51;
             dvgProductos.Size = new Size(747, 188);
             dvgProductos.TabIndex = 8;
-            dvgProductos.CellClick += new DataGridViewCellEventHandler(this.dvgProductos_CellClick);
-            dvgProductos.ReadOnly = true;
+            dvgProductos.CellClick += dvgProductos_CellClick;
             // 
             // label1
             // 
@@ -172,6 +175,7 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = SystemColors.ActiveCaption;
             ClientSize = new Size(800, 450);
             Controls.Add(label5);
             Controls.Add(label4);
@@ -189,7 +193,7 @@
             Controls.Add(txtCategoria);
             Name = "frmInventario";
             Text = "frmInventario";
-            this.Load += new System.EventHandler(this.frmInventario_Load);
+            Load += frmInventario_Load;
             ((System.ComponentModel.ISupportInitialize)dvgProductos).EndInit();
             ResumeLayout(false);
             PerformLayout();

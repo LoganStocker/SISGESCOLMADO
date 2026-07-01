@@ -77,6 +77,9 @@
             // 
             // dtpFechaVencimiento
             // 
+            dtpFechaVencimiento.CalendarMonthBackground = SystemColors.MenuBar;
+            dtpFechaVencimiento.CalendarTitleBackColor = SystemColors.AppWorkspace;
+            dtpFechaVencimiento.CalendarTitleForeColor = SystemColors.AppWorkspace;
             dtpFechaVencimiento.Location = new Point(194, 177);
             dtpFechaVencimiento.Name = "dtpFechaVencimiento";
             dtpFechaVencimiento.Size = new Size(250, 27);
@@ -85,12 +88,13 @@
             // 
             // btnRegistrar
             // 
+            btnRegistrar.BackColor = SystemColors.AppWorkspace;
             btnRegistrar.Location = new Point(16, 246);
             btnRegistrar.Name = "btnRegistrar";
             btnRegistrar.Size = new Size(94, 29);
             btnRegistrar.TabIndex = 6;
             btnRegistrar.Text = "Registrar";
-            btnRegistrar.UseVisualStyleBackColor = true;
+            btnRegistrar.UseVisualStyleBackColor = false;
             btnRegistrar.Click += btnRegistrar_Click;
             // 
             // dvgProductos
@@ -98,11 +102,11 @@
             dvgProductos.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dvgProductos.Location = new Point(16, 300);
             dvgProductos.Name = "dvgProductos";
+            dvgProductos.ReadOnly = true;
             dvgProductos.RowHeadersWidth = 51;
             dvgProductos.Size = new Size(747, 120);
             dvgProductos.TabIndex = 7;
             dvgProductos.CellClick += dvgProductos_CellClick;
-            dvgProductos.ReadOnly = true;
             // 
             // label1
             // 
@@ -162,6 +166,7 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = SystemColors.ActiveCaption;
             ClientSize = new Size(800, 450);
             Controls.Add(label6);
             Controls.Add(label5);

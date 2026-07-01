@@ -38,31 +38,33 @@
             dgvVentas.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvVentas.Location = new Point(30, 58);
             dgvVentas.Name = "dgvVentas";
+            dgvVentas.ReadOnly = true;
             dgvVentas.RowHeadersWidth = 51;
             dgvVentas.Size = new Size(727, 284);
             dgvVentas.TabIndex = 0;
-            dgvVentas.ReadOnly = true;
             // 
             // btnGenerarCorte
             // 
+            btnGenerarCorte.BackColor = SystemColors.AppWorkspace;
             btnGenerarCorte.Location = new Point(30, 371);
             btnGenerarCorte.Name = "btnGenerarCorte";
             btnGenerarCorte.Size = new Size(146, 29);
             btnGenerarCorte.TabIndex = 1;
             btnGenerarCorte.Text = "GenerarCorte";
-            btnGenerarCorte.UseVisualStyleBackColor = true;
-            btnGenerarCorte.Click += new System.EventHandler(this.btnGenerarCorte_Click);
+            btnGenerarCorte.UseVisualStyleBackColor = false;
+            btnGenerarCorte.Click += btnGenerarCorte_Click;
             // 
             // frmReportes
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = SystemColors.ActiveCaption;
             ClientSize = new Size(800, 450);
             Controls.Add(btnGenerarCorte);
             Controls.Add(dgvVentas);
             Name = "frmReportes";
             Text = "frmReportes";
-            this.Load += new System.EventHandler(this.frmReportes_Load);
+            Load += frmReportes_Load;
             ((System.ComponentModel.ISupportInitialize)dgvVentas).EndInit();
             ResumeLayout(false);
         }

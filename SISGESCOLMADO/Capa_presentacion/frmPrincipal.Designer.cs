@@ -36,49 +36,53 @@
             // 
             // btnInventario
             // 
-            btnInventario.Location = new Point(73, 79);
+            btnInventario.BackColor = SystemColors.AppWorkspace;
+            btnInventario.Location = new Point(73, 63);
             btnInventario.Name = "btnInventario";
-            btnInventario.Size = new Size(94, 29);
+            btnInventario.Size = new Size(135, 45);
             btnInventario.TabIndex = 0;
             btnInventario.Text = "Inventario";
-            btnInventario.UseVisualStyleBackColor = true;
-            btnInventario.Click += new System.EventHandler(this.btnInventario_Click);
+            btnInventario.UseVisualStyleBackColor = false;
+            btnInventario.Click += btnInventario_Click;
             // 
             // btnVentas
             // 
-            btnVentas.Location = new Point(192, 79);
+            btnVentas.BackColor = SystemColors.AppWorkspace;
+            btnVentas.Location = new Point(253, 63);
             btnVentas.Name = "btnVentas";
-            btnVentas.Size = new Size(94, 29);
+            btnVentas.Size = new Size(127, 45);
             btnVentas.TabIndex = 1;
             btnVentas.Text = "Ventas";
-            btnVentas.UseVisualStyleBackColor = true;
-            btnVentas.Click += new System.EventHandler(this.btnVentas_Click);
-
+            btnVentas.UseVisualStyleBackColor = false;
+            btnVentas.Click += btnVentas_Click;
             // 
             // btnCreditos
             // 
-            btnCreditos.Location = new Point(317, 79);
+            btnCreditos.BackColor = SystemColors.AppWorkspace;
+            btnCreditos.Location = new Point(447, 63);
             btnCreditos.Name = "btnCreditos";
-            btnCreditos.Size = new Size(94, 29);
+            btnCreditos.Size = new Size(132, 45);
             btnCreditos.TabIndex = 2;
             btnCreditos.Text = "Creditos";
-            btnCreditos.UseVisualStyleBackColor = true;
-            btnCreditos.Click += new System.EventHandler(this.btnCreditos_Click);
+            btnCreditos.UseVisualStyleBackColor = false;
+            btnCreditos.Click += btnCreditos_Click;
             // 
             // btnReportes
             // 
-            btnReportes.Location = new Point(431, 79);
+            btnReportes.BackColor = SystemColors.AppWorkspace;
+            btnReportes.Location = new Point(625, 63);
             btnReportes.Name = "btnReportes";
-            btnReportes.Size = new Size(94, 29);
+            btnReportes.Size = new Size(130, 45);
             btnReportes.TabIndex = 3;
             btnReportes.Text = "Reportes";
-            btnReportes.UseVisualStyleBackColor = true;
-            btnReportes.Click += new System.EventHandler(this.btnReportes_Click);
+            btnReportes.UseVisualStyleBackColor = false;
+            btnReportes.Click += btnReportes_Click;
             // 
             // frmPrincipal
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = SystemColors.ActiveCaption;
             ClientSize = new Size(800, 450);
             Controls.Add(btnReportes);
             Controls.Add(btnCreditos);

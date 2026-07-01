@@ -37,33 +37,34 @@
             // 
             // txtUsuario
             // 
-            txtUsuario.Location = new Point(50, 115);
+            txtUsuario.Location = new Point(50, 158);
             txtUsuario.Name = "txtUsuario";
-            txtUsuario.Size = new Size(125, 27);
+            txtUsuario.Size = new Size(203, 27);
             txtUsuario.TabIndex = 0;
             // 
             // txtContrasena
             // 
-            txtContrasena.Location = new Point(50, 188);
+            txtContrasena.Location = new Point(50, 230);
             txtContrasena.Name = "txtContrasena";
             txtContrasena.PasswordChar = '*';
-            txtContrasena.Size = new Size(125, 27);
+            txtContrasena.Size = new Size(203, 27);
             txtContrasena.TabIndex = 1;
             // 
             // btnIngresar
             // 
-            btnIngresar.Location = new Point(205, 137);
+            btnIngresar.BackColor = SystemColors.AppWorkspace;
+            btnIngresar.Location = new Point(50, 289);
             btnIngresar.Name = "btnIngresar";
             btnIngresar.Size = new Size(94, 29);
             btnIngresar.TabIndex = 2;
             btnIngresar.Text = "Aceptar";
-            btnIngresar.UseVisualStyleBackColor = true;
+            btnIngresar.UseVisualStyleBackColor = false;
             btnIngresar.Click += btnIngresar_Click;
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(50, 83);
+            label1.Location = new Point(50, 123);
             label1.Name = "label1";
             label1.Size = new Size(44, 20);
             label1.TabIndex = 3;
@@ -72,7 +73,7 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(50, 155);
+            label2.Location = new Point(50, 197);
             label2.Name = "label2";
             label2.Size = new Size(50, 20);
             label2.TabIndex = 4;
@@ -82,6 +83,7 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = SystemColors.ActiveCaption;
             ClientSize = new Size(800, 450);
             Controls.Add(label2);
             Controls.Add(label1);
